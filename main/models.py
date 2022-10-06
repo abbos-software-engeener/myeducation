@@ -10,7 +10,7 @@ class Order(models.Model):
 
 
 class Product(models.Model):
-    excel_product = models.FileField(upload_to="uploads/excel", null=True, blank=True)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
     product_id = models.CharField(max_length=20, null=True, blank=True)
     name = models.CharField(max_length=100, null=True, blank=True)
     description = models.TextField(null=True, blank=True)

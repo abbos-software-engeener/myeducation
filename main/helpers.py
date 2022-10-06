@@ -14,6 +14,7 @@ def more_adding_warehouse_product(order):
         for i in range(2, max_row+1):
             products.append(
                 Product(
+                    order = order,
                     product_id=sheet.cell(row=i, column=1).value,
                     name=sheet.cell(row=i, column=2).value,
                     description=sheet.cell(row=i, column=3).value,

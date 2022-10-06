@@ -11,6 +11,7 @@ class OrderSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         representation = super().to_representation(instance)
         representation["order"] = instance.id
+        more_adding_warehouse_product(instance)
         return representation
 
 
@@ -18,4 +19,3 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = "__all__"
-
